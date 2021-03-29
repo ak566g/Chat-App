@@ -1,55 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php
+        session_start();
+        if (isset($_SESSION['unique_id'])) {
+            header("location: users.php");
+        }
+?>
 
-    <title>Chat-Box</title>
+<?php include_once "header.php"; ?>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
-    crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="css/style.css">
-</head>
 <body>
     <div class="wrapper">
         <section class="form signup">
             <header>Chat Box</header>
-            <form action="#">
-                <div class="error-txt">This is an error message</div>
+            <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
+                <div class="error-text"></div>
                 <div class="name-details">
-                    <br>
                     <div class="field input">
                         <label>First Name</label>
-                        <input type="text" placeholder="First Name" required/>
+                        <input type="text" name="fname" placeholder="First name" required>
                     </div>
                     <div class="field input">
                         <label>Last Name</label>
-                        <input type="text" placeholder="Last Name"/>
-                    </div>
-                    <div class="field input">
-                        <label>Email Address</label>
-                        <input type="text" placeholder="Email Address"/>
-                    </div>
-                    <div class="field input">
-                        <label>Password</label>
-                        <input type="text" placeholder="Password"/>
-                    </div>
-
-                    <div class="field">
-                        <label>Select Profile Image</label>
-                        <input type="file"/>
-                    </div>
-                    <br>
-                    <div class="field input">
-                        <input class="btn" type="button" value="Continue to Chat"/>
+                        <input type="text" name="lname" placeholder="Last name" required>
                     </div>
                 </div>
+                <div class="field input">
+                    <label>Email Address</label>
+                    <input type="text" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="field input">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter new password" required>
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="field image">
+                    <label>Select Image</label>
+                    <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                </div>
+                <div class="field button">
+                    <input type="submit" name="submit" value="Continue to Chat">
+                </div>
             </form>
-            <div class="link">Already signed up? <a href="#">Login Now</a></div>
+            <div class="link">Already signed up? <a href="login.php">Login now</a></div>
         </section>
     </div>
+
+    <script src="js/pass-show-hide.js"></script>
+    <script src="js/signup.js"></script>
+
 </body>
+
 </html>
