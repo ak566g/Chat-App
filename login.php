@@ -10,7 +10,7 @@ if (isset($_SESSION['unique_id'])) {
 <body>
     <div class="wrapper">
         <section class="form login">
-            <header>Realtime Chat App</header>
+            <header>Chat Box</header>
             <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
                 <div class="error-text"></div>
                 <div class="field input">
@@ -30,6 +30,7 @@ if (isset($_SESSION['unique_id'])) {
         </section>
     </div>
     <script src="js/pass-show-hide.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/login.js"></script> 
 </body>
 </html>
