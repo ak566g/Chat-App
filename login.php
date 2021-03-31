@@ -30,7 +30,6 @@ if (isset($_SESSION['unique_id'])) {
         </section>
     </div>
     <script src="js/pass-show-hide.js"></script>
-    <script src="js/signup.js"></script>
     <script src="js/login.js"></script> 
 </body>
 </html>
